@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>SpringBoot CRUD Student</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                <link href="../static/assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
+                <link href="../static/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+                <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+                <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+                <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+                <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
+                </head>
+                <body>
+                    <div class="wrapper" align="center">
+                        <h2>SpringBoot CRUD - Student</h2>
+                        <hr/>
+                        <tr>
+                            <div align="center">
+                                <h3> <a th:href="@{'/new'}" class="btn btn-primary rounded-pill"><i class="fa fa-plus-circle"></i> Add New</a> </h3>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="col-sm-5" align="center">
+                                <div class="panel-body" align="center">
+                                    <div class="content-panel">
+                                        <table class="table table-striped table-advance table-hover">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Course</th>
+                                                    <th>Fee</th>
+                                                    <th>Actions</th>                                              
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr th:each="student : ${liststudent}">                              
+                                                    <td th:text="${student.id}">ID</td>
+                                                    <td th:text="${student.name}">Name</td>
+                                                    <td th:text="${student.course}">Course</td>
+                                                    <td th:text="${student.fee}">Fee</td>
+                                                    <td>
+                                                        <a th:href="@{'/edit/' + ${student.id}}" class="btn btn-success rounded-pill"><i class="fa fa-pencil"></i></a> 
+                                                        &nbsp;
+                                                        <a th:href="@{'/delete/' + ${student.id}}" class="btn btn-danger rounded-pill"><i class="fa fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </tr>
+                    </div>
+                </body>
+                </html>

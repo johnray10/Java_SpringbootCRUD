@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+        <script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js}"></script>
+        <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js}"></script>
+    </head>
+
+    <body>
+        <div class="wrapper" align="center">
+            <h1>Edit Student</h1>
+            <br />
+            <div class="col-sm-4">
+                <form action="#" th:action="@{/save}" th:object="${student}" method="post">
+                    <div align="left">
+                        <tr>
+                            <label class="form-label">ID:</label>
+                            <td><input type="text" th:field="*{id}" class="form-control" readonly="readonly"/></td>
+                        </tr>
+                    </div>
+                    <div align="left">
+                        <tr>
+                            <label class="form-label">Name:</label>
+                            <td><input type="text" th:field="*{name}" class="form-control"/></td>
+                        </tr>
+                    </div>
+                    <div align="left">
+                        <tr>
+                            <label class="form-label">Course:</label>
+                            <td><input type="text" th:field="*{course}" class="form-control" /></td>
+                        </tr>
+                    </div>
+                    <div align="left">
+                        <tr>
+                            <label class="form-label">Fee:</label>
+                            <td><input type="text" th:field="*{fee}" class="form-control" /></td>
+                        </tr>
+                    </div>
+                    <br>
+                        <tr>
+                            <td colspan="2"><button type="submit" class="btn btn-success rounded-pill">Edit</button> </td>
+                        </tr>
+                </form>
+            </div>
+
+        </div>
+    </body>
+
+</html>
